@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #a91d1d;
+  --secondary-color: #f6e4e4;
+  /* --primary-color: #9a090e; #eedede */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(var(--foreground-rgb));
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@font-face {
+  font-family: "Beauty";
+  src: url("/fonts/AbsoluteBeautyScriptBold.otf") format("otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bg-decor::after {
+  position: absolute;
+  width: 40px;
+  height: 17px;
+  background-color: var(--primary-color);
+  top: 14px;
+  right: -10px;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.bg-decor::before {
+  position: absolute;
+  width: 17px;
+  height: 40px;
+  background-color: var(--primary-color);
+  top: 4px;
+  left: 0;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.decor-b-l {
+  position: absolute;
+  width: 40px;
+  height: 18px;
+  background-color: var(--primary-color);
+  bottom: 10px;
+  left: -8px;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.decor-b-r {
+  position: absolute;
+  width: 18px;
+  height: 40px;
+  background-color: var(--primary-color);
+  bottom: 3px;
+  right: 0;
+  content: "";
+  transform: rotate(45deg);
+}
+
+image {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.wishes {
+  background-image: url("../public/images/DSC06847.JPG");
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.wishes::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* tương đương top: 0; right: 0; bottom: 0; left: 0 */
+  background-color: rgba(0, 0, 0, 0.35); /* màu đen mờ 50% */
+  z-index: 1;
+}
+
+.wishes > * {
+  position: relative;
+  z-index: 2;
+}
+
+.bg-blur {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
