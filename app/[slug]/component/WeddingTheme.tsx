@@ -19,25 +19,21 @@ interface Guest {
   slug: string;
 }
 
-export default function WeddingTheme({
-  guessName = "Quý khách",
-}: {
-  guessName?: string;
-}) {
+export default function WeddingTheme({ slug }: { slug?: string }) {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [showMessage, setShowMessage] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [dataWishing, setDataWishing] = useState<Wishes[]>([]);
-  const [guest, setGuest] = useState<Guest[]>([]);
+  const [guest, setGuest] = useState<Guest | null>(null);
 
   useEffect(() => {
-    if (!guessName) return;
+    if (!slug) return;
 
     const fetchGuestBySlug = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/all-guest/${guessName}`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/all-guest/${slug}`
         );
         if (!response.ok) throw new Error("Guest not found");
         const data = await response.json();
@@ -48,7 +44,7 @@ export default function WeddingTheme({
     };
 
     fetchGuestBySlug();
-  }, [guessName]);
+  }, [slug]);
 
   useEffect(() => {
     setLoading(true);
@@ -153,7 +149,7 @@ export default function WeddingTheme({
                 <div className="px-1 py-6 bg-secondary rounded-xs">
                   <div className="text-center text-base mb-3">THÂN MỜI</div>
                   <div className="text-center underline decoration-1 underline-offset-2 decoration-dashed text-4xl font-local">
-                    {guest ? guest.name : "Quý khách"}
+                    {guest?.name || "Quý khách"}
                   </div>
                   <div className="text-center text-base my-3">
                     ĐẾN DỰ HÔN LỄ CỦA HAI VỢ CHỒNG

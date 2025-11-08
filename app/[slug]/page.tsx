@@ -7,5 +7,5 @@ export default async function Guess({
 }) {
   const { slug } = await params;
 
-  return <WeddingTheme guessName={slug} />;
+  return <WeddingTheme slug={slug} />;
 }
