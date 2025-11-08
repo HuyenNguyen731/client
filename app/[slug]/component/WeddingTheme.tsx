@@ -264,35 +264,35 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
 
             <Image
               src="/images/DSC06839.jpg"
-              alt="Picture 2"
+              alt="Picture 4"
               width={500}
               height={400}
               className="block "
             />
             <Image
-              src="/images/DSC06178.jpg"
-              alt="Picture 4"
+              src="/images/3.jpg"
+              alt="Picture 3"
               width={500}
               height={500}
               className="block"
             />
             <Image
-              src="/images/DSC06464.jpg"
-              alt="Picture 2"
+              src="/images/5.jpg"
+              alt="Picture 5"
               width={500}
               height={400}
               className="block col-span-2"
             />
             <Image
-              src="/images/DSC06239.jpg"
-              alt="Picture 1"
+              src="/images/6.jpg"
+              alt="Picture 6"
               width={500}
               height={300}
               className="block"
             />
             <Image
-              src="/images/DSC06864.jpg"
-              alt="Picture 2"
+              src="/images/7.jpg"
+              alt="Picture 7"
               width={500}
               height={400}
               className="block "
