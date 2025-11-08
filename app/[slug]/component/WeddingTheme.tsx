@@ -248,15 +248,15 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
           </div>
           <div className="grid grid-cols-2 gap-2">
             <Image
-              src="/images/DSC05813.jpg"
-              alt="Picture 2"
+              src="/images/1.jpg"
+              alt="Picture 1"
               width={500}
               height={400}
               className="block "
             />
             <Image
-              src="/images/DSC06001.jpg"
-              alt="Picture 3"
+              src="/images/2.jpg"
+              alt="Picture 2"
               width={500}
               height={500}
               className="block"
