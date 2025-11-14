@@ -116,7 +116,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/images/h.png"
+              src="/images/b.png"
               alt="Picture of the author"
               width={500}
               height={400}
@@ -175,7 +175,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
                       </div>
                       <div className="text-center text-secondary bg-[#2B316A] rounded-xl shadow-xl">
                         <Link
-                          href="https://maps.app.goo.gl/6R5RbCbmEqQbFqhc6"
+                          href="https://maps.app.goo.gl/YW7GXbeA9yCy42HK8"
                           className="my-auto block leading-7 text-sm"
                           target="_blank"
                         >
@@ -248,62 +248,54 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
           </div>
           <div className="grid grid-cols-2 gap-2">
             <Image
-              src="/images/1.jpg"
+              src="/images/anh_1.jpg"
               alt="Picture 1"
               width={500}
               height={400}
               className="block "
             />
             <Image
-              src="/images/2.jpg"
-              alt="Picture 2"
+              src="/images/anh_6.jpg"
+              alt="Picture 6"
               width={500}
               height={500}
               className="block"
             />
-
             <Image
-              src="/images/DSC06839.jpg"
+              src="/images/anh_4.jpg"
               alt="Picture 4"
+              width={500}
+              height={400}
+              className="block col-span-2"
+            />
+            <Image
+              src="/images/anh_7.jpg"
+              alt="Picture 7"
               width={500}
               height={400}
               className="block "
             />
-            <Image
-              src="/images/3.jpg"
+             <Image
+              src="/images/anh_3.jpg"
               alt="Picture 3"
               width={500}
               height={500}
               className="block"
             />
             <Image
-              src="/images/5.jpg"
-              alt="Picture 5"
-              width={500}
-              height={400}
-              className="block col-span-2"
-            />
-            <Image
-              src="/images/6.jpg"
-              alt="Picture 6"
-              width={500}
-              height={300}
-              className="block"
-            />
-            <Image
-              src="/images/7.jpg"
-              alt="Picture 7"
+              src="/images/anh_2.jpg"
+              alt="Picture 2"
               width={500}
               height={400}
               className="block "
             />
-            {/* <Image
-              src="/images/DSC06448.jpg"
-              alt="Picture 1"
+              <Image
+              src="/images/9.jpg"
+              alt="Picture 5"
               width={500}
               height={300}
-              className="block col-span-2"
-            /> */}
+              className="block"
+            />
           </div>
         </div>
         {/* Lưu bút */}
@@ -365,8 +357,15 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
                     onChange={(e) => setContent(e.target.value)}
                   />
                   <button
+                    disabled={!name.trim() || !content.trim()}
                     type="submit"
-                    className="border text-secondary rounded-md p-2 mt-2 w-full bg-[#292c51]"
+                    className={`rounded-md p-2 mt-2 w-full bg-[#292c51] text-secondary
+                      ${
+                        !name.trim() || !content.trim()
+                          ? "opacity-70 cursor-not-allowed"
+                          : "border"
+                      }
+                    `}
                   >
                     Gửi lời chúc
                   </button>
@@ -380,7 +379,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
         <div className="h-[0.5px] w-full bg-gray-300"></div>
         <div className="section m-3 px-3 py-4 overflow-hidden bg-secondary">
           <div className="text-center text-primary relative">
-            <div className="absolute -right-6 -top-6 cursor-none">
+            <div className="absolute -right-5 -top-5 cursor-none">
               <Image
                 src="/images/gift.png"
                 alt="Picture of the author"
@@ -390,7 +389,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
               />
             </div>
             <div className="font-local text-5xl">Hộp mừng cưới</div>
-            <div className="">
+            <div className="px-6">
               Cảm ơn tất cả tình cảm của mọi người đã dành cho chúng mình ạ 💕
             </div>
             <div className="grid grid-cols-2 gap-2 mt-4 mb-2">
@@ -406,32 +405,32 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
                 <div className="italic underline">Mừng cưới chú rể</div>
                 <div className="flex justify-center mt-4 mb-3">
                   <Image
-                    src="/images/r.png"
+                    src="/images/qr-re.jpg"
                     alt="Groom's QR Code"
                     width={100}
                     height={100}
                     className="border-2 border-blue-800"
                   />
                 </div>
-                <div className="">Vietcombank</div>
+                <div className="text-[#499245]">Vietcombank</div>
                 <div className="">NGUYỄN HẢI ĐÔN</div>
-                <div className="">1903 4853 9475</div>
+                <div className="text-gray-800">9974 736 193</div>
               </div>
 
               <div className="bg-white py-4 px-1">
                 <div className="italic underline">Mừng cưới cô dâu</div>
                 <div className="flex justify-center mt-4 mb-3">
                   <Image
-                    src="/images/r.png"
+                    src="/images/qr-dau.jpg"
                     alt="Bride's QR Code"
                     width={100}
                     height={100}
                     className="border-2 border-blue-800"
                   />
                 </div>
-                <div className="">Vietcombank</div>
+                <div className="text-[#499245]">Vietcombank</div>
                 <div className="">NGUYỄN THU HUYỀN</div>
-                <div className="">1903 4853 9475</div>
+                <div className="text-gray-800">0301 0004 21778</div>
               </div>
               <div className="bg-white">
                 <Image
@@ -459,19 +458,6 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
           <div className="font-local text-5xl mr-6">Chân thành</div>
           <div className="text-2xl font-semibold ml-6 tracking-wider">
             CẢM ƠN !
-          </div>
-        </div>
-
-        {/* icon donate */}
-        <div className="fixed bottom-5 right-3">
-          <div className="bg-[#292c51] p-3 rounded-full">
-            <Image
-              src="/images/v.png"
-              alt="Picture of the author"
-              width={30}
-              height={30}
-              className="block animate-[spin_7s_linear_infinite]"
-            />
           </div>
         </div>
 
