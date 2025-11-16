@@ -89,7 +89,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
       // Hiển thị thông báo
       setShowMessage(true);
 
-      setDataWishing((prev) => [...prev, createdWishing]);
+      setDataWishing((prev) => [createdWishing,...prev]);
       setName("");
       setContent("");
 
@@ -116,7 +116,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/images/b.png"
+              src="/images/ba.png"
               alt="Picture of the author"
               width={500}
               height={400}
