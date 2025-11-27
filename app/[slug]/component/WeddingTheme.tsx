@@ -19,6 +19,51 @@ interface Guest {
   slug: string;
 }
 
+const data = [
+  {
+    content: "Trăm năm hạnh phúc nhé bạn tui 🥰",
+    createdAt: "2025-11-20T06:16:17.288Z",
+    hidden: true,
+    name: "Bạn Hà xinh",
+    time: "13:16, 20/11/2025",
+  },
+  {
+    content: "Làm đội bóng chị nhá 😍",
+    createdAt: "2025-11-20T03:55:44.330Z",
+    hidden: true,
+    name: "Em Tuyết xinh",
+    time: "10:55, 20/11/2025",
+  },
+  {
+    content: "Chúc vc e 80 năm hạnh phúc. Sinh quý tử đầu lòng 🤩",
+    createdAt: "2025-11-20T03:51:38.090Z",
+    hidden: true,
+    name: "A Trọng Canon",
+    time: "10:51, 20/11/2025",
+  },
+  {
+    content: "Chúc em hạnh phúc, sớm sinh quý tử nhé 🥰🥰🥰",
+    createdAt: "2025-11-20T03:50:09.450Z",
+    hidden: true,
+    name: "C Hương xinh đẹp",
+    time: "10:50, 20/11/2025",
+  },
+  {
+    content: "Chúc mừng hạnh phúc vợ chồng e nhé ^^",
+    createdAt: "2025-11-18T23:54:30.390Z",
+    hidden: true,
+    name: "Linh",
+    time: "06:54, 19/11/2025",
+  },
+  {
+    content: "Chúc mừng hạnh phúc 2 đứa ",
+    createdAt: "2025-11-18T04:37:47.290Z",
+    hidden: true,
+    name: "Anonymous",
+    time: "11:37, 18/11/2025",
+  },
+];
+
 export default function WeddingTheme({ slug }: { slug?: string }) {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
@@ -89,7 +134,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
       // Hiển thị thông báo
       setShowMessage(true);
 
-      setDataWishing((prev) => [createdWishing,...prev]);
+      setDataWishing((prev) => [createdWishing, ...prev]);
       setName("");
       setContent("");
 
@@ -275,7 +320,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
               height={400}
               className="block "
             />
-             <Image
+            <Image
               src="/images/anh_3.jpg"
               alt="Picture 3"
               width={500}
@@ -289,7 +334,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
               height={400}
               className="block "
             />
-              <Image
+            <Image
               src="/images/9.jpg"
               alt="Picture 5"
               width={500}
@@ -315,7 +360,23 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
                     [&::-webkit-scrollbar-thumb]:bg-gray-500"
               >
                 {loading ? (
-                  <div>loading...</div>
+                 <div>
+                    {data.map((item) => (
+                      <div key={item.name}>
+                        {item.hidden && (
+                          <div className="item border-b border-gray-500 py-2">
+                            <div className="font-semibold text-gray-200">
+                              {item.name}
+                            </div>
+                            <div className="text-xs text-gray-300">
+                              {item.time}
+                            </div>
+                            <div className="text-gray-200">{item.content}</div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 ) : (
                   <div>
                     {dataWishing.map((item) => (
