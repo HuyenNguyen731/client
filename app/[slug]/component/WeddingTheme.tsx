@@ -420,7 +420,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
                   <button
                     disabled={!name.trim() || !content.trim()}
                     type="submit"
-                    className={`rounded-md p-2 mt-2 w-full bg-[#292c51] text-secondary
+                    className={`rounded-md p-2 py-3 mt-2 w-full bg-[#292c51] text-secondary
                       ${
                         !name.trim() || !content.trim()
                           ? "opacity-70 cursor-not-allowed"
@@ -523,7 +523,7 @@ export default function WeddingTheme({ slug }: { slug?: string }) {
         </div>
 
         {showMessage && (
-          <div className="fixed top-8 right-3">
+          <div className="fixed top-8 right-0">
             <div className="mt-4 p-2 bg-green-100 text-green-700 border border-green-400 rounded">
               ✅ Gửi lời chúc thành công!
             </div>
